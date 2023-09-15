@@ -1,0 +1,14 @@
+[Unit]
+Description=FNFBot removes `not found` images in channels
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/fnfbot -p=/var/www/.fnfbot.env
+Restart=always
+User=www-data
+Group=www-data
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
